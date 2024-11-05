@@ -20,6 +20,11 @@ namespace Triangle.Logic.Triangle
                 else return true;
             }
         }
+        public double Height { get
+            {
+                return this._getTriangleHeight(this.Sides.A);
+            }
+        }
         public TriangleTypeBySide TriangleTypeBySide
         {
             get
@@ -32,6 +37,12 @@ namespace Triangle.Logic.Triangle
             get
             {
                 return this._getTriangleTypeByAngle();
+            }
+        }
+
+        public double TriangleSquare { get
+            {
+                return this._getTriangleSquare();
             }
         }
 

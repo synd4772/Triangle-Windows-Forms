@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Triangle.Core.Enums;
 using Triangle.Logic.Number;
+
 namespace Triangle.Logic.Triangle
 {
     public partial class Triangle
@@ -37,7 +38,9 @@ namespace Triangle.Logic.Triangle
                 if (angle > 90)
                 {
                     obtuse++;
+                    continue;
                 }
+                acuted++;
             }
             if (obtuse == 1) return TriangleTypeByAngle.Obtuse;
             return TriangleTypeByAngle.Acute;

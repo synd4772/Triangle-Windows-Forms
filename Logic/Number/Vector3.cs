@@ -11,6 +11,24 @@ namespace Triangle.Logic
     {
         public Vector3Type Vector3Type { get; }
         private double[] _doubles { get; set; } = new double[3];
+        public Vector3(double a, double b, double c) {
+            this.A = a; this.B = b; this.C = c;
+        }
+
+        public List<double> newList { 
+            get
+            {
+                return new List<double>() { this.A, this.B, this.C };
+            }
+        }
+        public Vector3() { }
+
+        public void setNumbers(double a, double b, double c)
+        {
+            this.A = a;
+            this.B = b;
+            this.C = c;
+        }
         public double A
         {
             get
@@ -44,7 +62,14 @@ namespace Triangle.Logic
                 _doubles[2] = value;
             }
         }
-
+        public bool DoesArrayHaveAllNumbers()
+        {
+            foreach (var number in _doubles)
+            {
+                if (number == 0) return false;
+            }
+            return true;
+        }
     }
 }
     

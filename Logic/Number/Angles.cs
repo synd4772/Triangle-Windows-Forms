@@ -15,7 +15,11 @@ namespace Triangle.Logic.Number
 
         public Angles(double a, double b, double c)
         {
-            A = a; B = b; C = c;
+            if (a + b + c != 180)
+            {
+                throw new ArgumentException("invalid");
+            }
+            base.setNumbers(a, b, c);
         }
     }
 }
