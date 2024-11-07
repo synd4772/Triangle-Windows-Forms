@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Triangle.Core.Enums;
 using Triangle.Logic.Number;
 
@@ -58,12 +59,12 @@ namespace Triangle.Logic.Triangle
                     Sides.A, Sides.B, Sides.C
                 };
                 int index = -1;
-                doublesCopy.ForEach((element) =>
+                doubles.ForEach((element) =>
                 {
                     index++;
                     if (element != side)
                     {
-                        doublesCopy.RemoveAt(index);
+                        doublesCopy.Remove(element);
                     }
                 });
                 if(doublesCopy.Count == 2)

@@ -15,6 +15,7 @@ namespace Triangle
         Button Button { get; set; }
         tr.Triangle Triangle { get; set; }
         ListView ListView { get; set; }
+        List<ListViewItem> Items { get; set; }
 
         List<TextBox> SidesTextBoxes { get; set; }
         List<Label> SidesTextBoxesLabels { get; set; }

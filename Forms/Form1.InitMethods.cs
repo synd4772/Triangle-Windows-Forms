@@ -46,24 +46,35 @@ namespace Triangle
         
         private void _initListView()
         {
-            ListViewItem item1 = new ListViewItem("item1", 0);
-            item1.SubItems.Add("1");
-            item1.SubItems.Add("2");
-            item1.SubItems.Add("3");
-            ListViewItem item2 = new ListViewItem("item2", 1);
-            item2.SubItems.Add("4");
-            item2.SubItems.Add("5");
-            item2.SubItems.Add("6");
-            
+            ListViewItem item1 = new ListViewItem("Pool - \"A\"", 0);
+            ListViewItem item2 = new ListViewItem("Pool - \"B\"", 1);
+            ListViewItem item3 = new ListViewItem("Pool - \"С\"", 0);
+            ListViewItem item4 = new ListViewItem("Nurk - \"A\"", 1);
+            ListViewItem item5 = new ListViewItem("Nurk - \"B\"", 0);
+            ListViewItem item6 = new ListViewItem("Nurk - \"C\"", 1);
+            ListViewItem item7 = new ListViewItem("Kas kolmnurk on olemas", 0);
+            ListViewItem item8 = new ListViewItem("Kolmnurga tüüp külgedel", 1);
+            ListViewItem item9 = new ListViewItem("Kolmnurga tüüp nurkade järgi", 0);
+            ListViewItem item10 = new ListViewItem("Kolmnurga pindala", 1);
+            ListViewItem item11 = new ListViewItem("Kolmnurga kõrgus", 0);
+ 
+            ListViewItem item12 = new ListViewItem("Perimeeter", 1);
+
+
+
+            Items = new List<ListViewItem>()
+            {
+                item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12
+            };
             ListView = new ListView();
             ListView.Bounds = new Rectangle(new Point(20, 20), new Size(390, 230));
-            ListView.Columns.Add("Init Column", -2, HorizontalAlignment.Left);
-            ListView.Columns.Add("Column2", -2, HorizontalAlignment.Left);
-            ListView.Columns.Add("Column3", -2, HorizontalAlignment.Left);
-            ListView.Columns.Add("Column4", -2, HorizontalAlignment.Left);
-            ListView.Items.Add(item1);
-            ListView.Items.Add(item2);
-            
+            ListView.Columns.Add("Väli", -2, HorizontalAlignment.Left);
+            ListView.Columns.Add("Tähendus", -2, HorizontalAlignment.Left);
+            foreach(ListViewItem item in Items)
+            {
+                ListView.Items.Add(item);
+            }
+            ListView.View = View.Details;
 
         }
         private void _initSidesTextBoxes()
