@@ -16,6 +16,10 @@ namespace Triangle.Logic.Triangle
             this.Sides = sides;
             
         }
+        public Triangle()
+        {
+
+        }
         public Triangle(Sides sides, Angles angles)
         {
             this.Sides = sides;

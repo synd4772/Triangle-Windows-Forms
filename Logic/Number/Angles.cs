@@ -21,5 +21,6 @@ namespace Triangle.Logic.Number
             }
             base.setNumbers(a, b, c);
         }
+        public Angles() { }
     }
 }

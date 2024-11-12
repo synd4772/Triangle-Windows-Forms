@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Windows.Forms.VisualStyles;
+using Triangle.Forms.XmlForm;
 namespace Triangle
 {
     public partial class Form1: Form
     {
-
         private void _initAll()
         {
             this._initForm();
@@ -18,6 +18,10 @@ namespace Triangle
             this._initListView();
             this._initSidesTextBoxes();
             this._initAnglesTextBoxes();
+            this._initXmlTableForm();
+            this._initTriangle();
+            this._initPanel();
+ 
         }
 
         private void _initButton()
@@ -43,7 +47,24 @@ namespace Triangle
             this.ClientSize = new Size(this.FormWidth, this.FormHeight);
             this.Text = "Работа с треугольнииком";
         }
-        
+
+        private void _initXmlTableForm()
+        {
+            this.XmlTableForm = new XmlTabelForm();
+        }
+        private void _initTriangle()
+        {
+            this.Triangle = new Logic.Triangle.Triangle(new Logic.Number.Sides(15, 12, 10), new Logic.Number.Angles(60,60, 60));
+        }
+        private void _initPanel()
+        { 
+            DrawPanel = new Panel();
+            DrawPanel.Paint += this.DrawPanel_Paint;
+            DrawPanel.Size = new Size(400, 400);
+            DrawPanel.Location = new Point(this.FormWidth - DrawPanel.Width, this.FormHeight - DrawPanel.Height);
+            DrawPanel.BackColor = Color.AliceBlue;
+            this.Controls.Add(DrawPanel);
+        }
         private void _initListView()
         {
             ListViewItem item1 = new ListViewItem("Pool - \"A\"", 0);

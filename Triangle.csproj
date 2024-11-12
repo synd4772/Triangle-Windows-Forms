@@ -48,20 +48,29 @@
   <ItemGroup>
     <Compile Include="Core\Enums\VectorType.cs" />
     <Compile Include="Core\Enums\TriangleTypes.cs" />
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\MainForm\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
+    <Compile Include="Forms\MainForm\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form1.EventsMethods.cs">
+    <Compile Include="Forms\MainForm\Form1.EventsMethods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.InitMethods.cs">
+    <Compile Include="Forms\MainForm\Form1.InitMethods.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Variables.cs">
+    <Compile Include="Forms\MainForm\Form1.Methods.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm\Form1.Variables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XmlForm\XmlTabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\XmlForm\XmlTabelForm.Designer.cs">
+      <DependentUpon>XmlTabelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\Number\Angles.cs" />
     <Compile Include="Logic\Number\Vector3.cs" />
@@ -69,6 +78,7 @@
     <Compile Include="Logic\Triangle\Triangle.Math.cs" />
     <Compile Include="Logic\Triangle\Triangle.Output.cs" />
     <Compile Include="Logic\Triangle\Triangle.Variables.cs" />
+    <Compile Include="Logic\XMLSerializer\Serializer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logic\Triangle\Triangle.cs" />
@@ -96,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\triangles-data.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

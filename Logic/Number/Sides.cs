@@ -12,6 +12,7 @@ namespace Triangle.Logic.Number
         private Vector3Type Type { get { return Vector3Type.Sides; } }
 
         public Sides(double a, double b, double c) : base(a, b, c) { }
+        public Sides() { }
 
     }
 }

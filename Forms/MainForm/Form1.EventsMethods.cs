@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using tr = Triangle.Logic.Triangle;
 using Triangle.Logic.Number;
 using System.Runtime.InteropServices;
+using System.Xml.Serialization;
+using System.IO;
+using Triangle.Logic.XMLSerializer;
 
 namespace Triangle
 {
@@ -65,6 +68,13 @@ namespace Triangle
             Items[9].SubItems.Add(triangle.TriangleSquare.ToString());
             Items[10].SubItems.Add(triangle.Height.ToString());
             Items[11].SubItems.Add(triangle.Perimeter().ToString());
+
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string path = $"{currentDirectory}..\\..\\..\\Data\\triangles-data.xml";
+            List<tr.Triangle> triangles = TrianglesSerializer.DeserializeTriangles(path);
+            triangles.Add(triangle);
+            TrianglesSerializer.SerializeTriangles(path, triangles);
+            this.DrawPanel.Invalidate();
         }
     }
 }

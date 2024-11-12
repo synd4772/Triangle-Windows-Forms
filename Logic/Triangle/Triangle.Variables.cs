@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml.Serialization;
 using Triangle.Core.Enums;
 using Triangle.Logic.Number;
 
@@ -10,7 +12,9 @@ namespace Triangle.Logic.Triangle
 {
     public partial class Triangle
     {
+        [XmlElement("Sides")]
         public Sides Sides { get; set; }
+        [XmlElement("Angles")]
         public Angles Angles { get; set; }
         public bool ExistTriangle
         {
@@ -20,6 +24,7 @@ namespace Triangle.Logic.Triangle
                 else return true;
             }
         }
+       
         public double Height { get
             {
                 return this._getTriangleHeight(this.Sides.A);
@@ -45,6 +50,7 @@ namespace Triangle.Logic.Triangle
                 return this._getTriangleSquare();
             }
         }
+
 
     }
 }

@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using Triangle.Core.Enums;
 
 namespace Triangle.Logic
 {
     public class Vector3
     {
+        [XmlElement("VectorType")]
         public Vector3Type Vector3Type { get; }
+        [XmlIgnore]
         private double[] _doubles { get; set; } = new double[3];
+
         public Vector3(double a, double b, double c) {
             this.A = a; this.B = b; this.C = c;
         }
@@ -29,6 +33,8 @@ namespace Triangle.Logic
             this.B = b;
             this.C = c;
         }
+
+        
         public double A
         {
             get
